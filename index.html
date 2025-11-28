@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>JamayetNama.info — বাংলাদেশের অপরাধ আর্কাইভ</title>
+
+<!-- বাংলা ফন্ট -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+/* ---------- BASIC ---------- */
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:'Noto Sans Bengali', sans-serif;
+  background:#0b0b0c;
+  color:#fff;
+}
+/* ---------- HEADER ---------- */
+header{
+  position:fixed;
+  top:0;left:0;right:0;
+  padding:14px 18px;
+  z-index:50;
+  background:linear-gradient(180deg,rgba(0,0,0,0.65),transparent);
+  font-weight:700;
+  font-size:18px;
+  letter-spacing:-0.5px;
+}
+/* ---------- HERO SECTION ---------- */
+.hero{
+  min-height:100vh;
+  position:relative;
+  padding-top:80px;
+  overflow:hidden;
+}
+
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1529101091764-c3526daf38fe?auto=format&fit=crop&w=1200&q=60');
+  background-size:cover;
+  background-position:center;
+  filter:brightness(0.35);
+  z-index:1;
+}
+
+.overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(0,0,0,0.4),rgba(0,0,0,0.75));
+  z-index:2;
+}
+
+/* ---------- TEXT AREA ---------- */
+.container{
+  position:relative;
+  z-index:5;
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
+
+.eyebrow{
+  color:#9aa3ad;
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+h1{
+  font-size:clamp(1.8rem,6vw,3.2rem);
+  font-weight:800;
+  margin-bottom:10px;
+}
+
+.lead{
+  color:#9aa3ad;
+  font-size:1rem;
+  max-width:70ch;
+  margin-bottom:18px;
+}
+
+/* ---------- SEARCH ---------- */
+.search-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.search-row input,
+.search-row select{
+  padding:10px 12px;
+  border-radius:8px;
+  border:1px solid rgba(255,255,255,0.1);
+  background:rgba(255,255,255,0.05);
+  color:#fff;
+  font-size:15px;
+}
+
+button{
+  padding:10px 16px;
+  border-radius:8px;
+  background:#e11d2f;
+  border:0;
+  color:#fff;
+  font-weight:700;
+  font-size:15px;
+}
+
+/* ---------- STATS ---------- */
+.stats{
+  display:flex;
+  gap:12px;
+  margin-top:18px;
+  flex-wrap:wrap;
+}
+
+.stat-card{
+  background:rgba(255,255,255,0.05);
+  padding:16px 20px;
+  border-radius:10px;
+  text-align:center;
+  min-width:130px;
+}
+
+.stat-card .num{
+  font-size:2.8rem;
+  font-weight:900;
+}
+
+.stat-card .label{
+  color:#9aa3ad;
+  margin-top:6px;
+  font-weight:600;
+}
+</style>
+</head>
+
+<body>
+
+<header>JamayetNama.info</header>
+
+<main class="hero">
+  <div class="hero-bg"></div>
+  <div class="overlay"></div>
+
+  <div class="container">
+    <div class="eyebrow">বাংলাদেশ অপরাধভিত্তিক আর্কাইভ</div>
+
+    <h1>অপরাধের সত্যের মুখোমুখি — বাংলাদেশের অপরাধকথা</h1>
+
+    <p class="lead">JamayetNama.info — বাংলাদেশের অপরাধের তথ্য, ডেটা, বিশ্লেষণ, ক্যাটাগরি ও সার্চ সিস্টেম এক জায়গায়।</p>
+
+    <div class="search-row">
+      <input id="q" placeholder="সার্চ... যেমন: খুন, চুরি, দুর্নীতি">
+      <select id="cat">
+        <option value="">সব ক্যাটাগরি</option>
+        <option>খুন</option>
+        <option>চুরি</option>
+        <option>ধর্ষণ</option>
+        <option>দুর্নীতি</option>
+      </select>
+      <button id="btnSearch">সার্চ</button>
+    </div>
+
+    <div class="stats">
+      <div class="stat-card">
+        <div class="num">204+</div>
+        <div class="label">খুন</div>
+      </div>
+      <div class="stat-card">
+        <div class="num">120+</div>
+        <div class="label">চুরি</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<script>
+document.getElementById("btnSearch").addEventListener("click", function () {
+  const q = document.getElementById("q").value.trim();
+  const cat = document.getElementById("cat").value;
+
+  if (!q && !cat) {
+    alert("সার্চ করার জন্য কোনো শব্দ বা ক্যাটাগরি দিন");
+    return;
+  }
+
+  alert("সার্চ করা হচ্ছে: " + (q || "(কিছুই না)") + " — ক্যাটাগরি: " + (cat || "সব"));
+});
+</script>
+
+</body>
+  </html>
